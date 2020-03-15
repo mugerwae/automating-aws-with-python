@@ -9,10 +9,12 @@ pylint = "*"
 pycodestyle = "*"
 pydocs = "*"
 pydocstyle = "*"
+pyflakes = "*"
 
 [packages]
 boto3 = "*"
 click = "*"
+pyflakes = "*"
 
 [requires]
 python_version = "3.8"
