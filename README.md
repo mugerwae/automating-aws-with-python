@@ -1,5 +1,5 @@
-# Automating Asw With Python
+# Automating AWS With Python
 
-Repository for Automating AWS with Python Course
+Repository for Automating AWS with Python Course - Robin is one of the best trainers out there.
 
-## One of the best trainers i have seen.
+
