@@ -8,6 +8,8 @@ boto3 = "*"
 
 [dev-packages]
 ipython = "*"
+pycodestyle = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.10"
