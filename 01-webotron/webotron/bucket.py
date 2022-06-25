@@ -11,24 +11,24 @@ class BucketManager:
     """Manage an S3 Bucket."""
 
     def __init__(self, session):
-        """Create a BucketManager Object"""
+        """Create a BucketManager Object."""
         self.s3 = session.resource('s3')
 
     def all_buckets(self):
-        """Get an iterator for all buckets"""
+        """Get an iterator for all buckets."""
         return self.s3.buckets.all()
 
     def all_objects(self, bucket_name):
-        """ Get an iterator for all objects in a bucket."""
+        """Get an iterator for all objects in a bucket."""
         return self.s3.Bucket(bucket_name).objects.all()
 
     def init_bucket(self, bucket_name):
-        """ Create / Initialise bucket """
+        """Create / Initialise bucket."""
         s3_bucket = self.s3.create_bucket(Bucket=bucket_name)
         return s3_bucket
 
     def set_policy(self, bucket):
-        """" Set bucket policy to be readable by everyone."""
+        """Set bucket policy to be readable by everyone."""
         policy = """
         {
             "Version": "2012-10-17",
@@ -52,7 +52,7 @@ class BucketManager:
         pol.put(Policy=policy)
 
     def configure_website(self, bucket):
-        """ configure S3 website"""
+        """Configure S3 website."""
         bucket.Website().put(WebsiteConfiguration={'ErrorDocument': {
             'Key': 'error.html'
             },
@@ -73,7 +73,7 @@ class BucketManager:
             })
 
     def sync(self, pathname, bucket_name):
-        """Sync contents of PATHNAME to BUCKET"""
+        """Sync contents of PATHNAME to BUCKET."""
         bucket = self.s3.Bucket(bucket_name)
 
         root = Path(pathname).expanduser().resolve()

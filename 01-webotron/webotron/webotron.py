@@ -1,6 +1,7 @@
 #!/home/eric/.local/share/virtualenvs/01-webotron-dQyo6Bnj/bin/python
 # -*- coding: utf-8 -*-
-"""Webotron: Deploy websites with AWS
+"""Webotron: Deploy websites with AWS.
+
 Webotron automates the process of Deploying static websites to AWS
 - Configure AWS S3 buckets
   - Create them
@@ -10,9 +11,6 @@ Webotron automates the process of Deploying static websites to AWS
 - Configure a Content Delivery Network and SSL with AWS CloudFront
 
 """
-
-# from pathlib import Path
-
 
 import boto3
 import click
@@ -26,7 +24,7 @@ bucket_manager = None
 @click.group()
 @click.option('--profile', default=None, help="Use a given AWS profile.")
 def cli(profile):
-    """Webotron deploys websites to AWS"""
+    """Webotron deploys websites to AWS."""
     global session, bucket_manager
 
     session_cfg = {}
@@ -39,7 +37,7 @@ def cli(profile):
 
 @cli.command('list-buckets')
 def list_buckets():
-    """List all s3 bucket"""
+    """List all s3 bucket."""
     for bucket in bucket_manager.all_buckets():
         print(bucket)
 
@@ -47,7 +45,7 @@ def list_buckets():
 @cli.command('list-bucket-objects')
 @click.argument('bucket')
 def list_bucket_objects(bucket):
-    """List objctes in an s3 bucket"""
+    """List objctes in an s3 bucket."""
     for obj in bucket_manager.all_objects(bucket):
         print(obj)
 
@@ -55,7 +53,7 @@ def list_bucket_objects(bucket):
 @cli.command('setup-bucket')
 @click.argument('bucket')
 def setup_bucket(bucket):
-    """Create and configure S3 bucket"""
+    """Create and configure S3 bucket."""
     s3_bucket = bucket_manager.init_bucket(bucket)
     bucket_manager.set_policy(s3_bucket)
     bucket_manager.configure_website(s3_bucket)
@@ -65,7 +63,7 @@ def setup_bucket(bucket):
 @click.argument('pathname', type=click.Path(exists=True))
 @click.argument('bucket')
 def sync(pathname, bucket):
-    """Sync contents of PATHNAME to BUCKET"""
+    """Sync contents of PATHNAME to BUCKET."""
     bucket_manager.sync(pathname, bucket)
 
 

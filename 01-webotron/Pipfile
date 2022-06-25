@@ -8,9 +8,10 @@ boto3 = "*"
 
 [dev-packages]
 ipython = "*"
+pyflakes = "*"
 pycodestyle = "*"
 pylint = "*"
-pyflakes = "*"
+pydocstyle = "*"
 
 [requires]
 python_version = "3.10"
