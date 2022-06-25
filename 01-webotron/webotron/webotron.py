@@ -1,4 +1,4 @@
-#!C:\Python310\python.exe
+#!/home/eric/.local/share/virtualenvs/01-webotron-dQyo6Bnj/bin/python
 # -*- coding: utf-8 -*-
 """Webotron: Deploy websites with AWS
 Webotron automates the process of Deploying static websites to AWS
