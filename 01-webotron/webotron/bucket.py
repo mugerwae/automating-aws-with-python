@@ -10,7 +10,7 @@ from functools import reduce
 import boto3
 
 from hashlib import md5
-import util
+from webotron import util
 
 
 class BucketManager:

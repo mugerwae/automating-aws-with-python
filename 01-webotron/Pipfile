@@ -12,6 +12,7 @@ pyflakes = "*"
 pycodestyle = "*"
 pylint = "*"
 pydocstyle = "*"
+setuptools = "*"
 
 [requires]
 python_version = "3.10"

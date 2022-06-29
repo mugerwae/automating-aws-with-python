@@ -17,11 +17,5 @@ Webotron currently has the following features:
 - Set AWS profile with --profile=<profileName>
 - Configure route 53 domain
 
-#### Motivation
-
-Things that will make me continue
- - interest
- - needs
- - work hard
 
 
