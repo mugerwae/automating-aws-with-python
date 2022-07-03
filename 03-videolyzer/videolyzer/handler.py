@@ -2,6 +2,7 @@ import json
 import urllib
 import boto3
 import os
+from urllib.parse import urlparse
 
 
 def start_label_detection(bucket, key):
